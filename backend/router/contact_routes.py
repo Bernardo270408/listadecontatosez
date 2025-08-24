@@ -12,9 +12,6 @@ def allowed_file(filename):
     """Verifica se o arquivo tem extensão permitida."""
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-# --- Rotas Usuário ---
-
-
 # get contacts
 @contact_bp.route('/contacts', methods=['GET'])
 def get_contacts():

@@ -1,0 +1,8 @@
+#ignore venv
+**/venv/
+
+# Ignore arquivos de log
+*.log
+
+# Ignore arquivos de banco de dados
+*.sqlite3
