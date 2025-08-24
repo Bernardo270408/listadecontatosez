@@ -6,3 +6,9 @@
 
 # Ignore arquivos de banco de dados
 *.sqlite3
+
+# Ignore pastas __pycache__ e seus arquivos
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
