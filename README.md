@@ -1,4 +1,4 @@
-# Lista de Contatos (listadecontatosez)
+# Lista de Contatos simples
 
 Aplicação simples para gerenciar contatos, desenvolvida como trabalho escolar.  
 Serve como exemplo prático de CRUD (Create, Read, Update, Delete) em Python com interface web.
