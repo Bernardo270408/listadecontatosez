@@ -10,6 +10,12 @@ class ContactDAO:
 
     def get_by_email(email):
         return Contact.query.filter_by(email=email).first()
+    
+    def get_by_telephone(telephone):
+        return Contact.query.filter_by(telephone=telephone).first()
+    
+    def get_by_name(name):
+        return Contact.query.filter(Contact.name.ilike(f'%{name}%')).all()
 
     def create(data):
         contact = Contact(
@@ -26,10 +32,7 @@ class ContactDAO:
         contact = Contact.query.get(contact_id)
         if not contact:
             return None
-        contact.name = data.get('name', contact.name)
-        contact.email = data.get('email', contact.email)
-        contact.telephone = data.get('telephone', contact.telephone)
-        contact.profile_picture = data.get('profile_picture', contact.profile_picture)
+        contact.update_from_dict(data)
         db.session.commit()
         return contact
 

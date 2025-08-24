@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Novo Contato{% endblock %}
+{% block content %}
+    <h2>Novo Contato</h2>
+    <form action="{{ url_for('contacts.create_contact') }}" method="post" enctype="multipart/form-data" class="mt-3">
+        <div class="mb-3">
+            <label for="name" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">E-mail</label>
+            <input type="email" class="form-control" id="email" name="email">
+        </div>
+        <div class="mb-3">
+            <label for="telephone" class="form-label">Telefone</label>
+            <input type="text" class="form-control" id="telephone" name="telephone">
+        </div>
+        <div class="mb-3">
+            <label for="profile_picture" class="form-label">Foto de Perfil</label>
+            <input type="file" class="form-control" id="profile_picture" name="profile_picture" accept="image/*">
+        </div>
+        <button type="submit" class="btn btn-success">Salvar</button>
+        <a href="{{ url_for('contacts.get_contacts') }}" class="btn btn-secondary">Cancelar</a>
+    </form>
+{% endblock %}

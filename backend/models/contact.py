@@ -21,3 +21,8 @@ class Contact(db.Model):
             "telephone":self.telephone,
             "profile_picture":self.profile_picture
         }
+
+    def update_from_dict(self, data):
+        for key, value in data.items():
+            if hasattr(self, key):
+                setattr(self, key, value)
