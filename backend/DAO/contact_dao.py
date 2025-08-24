@@ -13,9 +13,18 @@ class ContactDAO:
     
     def get_by_telephone(telephone):
         return Contact.query.filter_by(telephone=telephone).first()
-    
+
     def get_by_name(name):
+        return Contact.query.filter_by(name=name).first()
+
+    def search_by_name(name):
         return Contact.query.filter(Contact.name.ilike(f'%{name}%')).all()
+
+    def search_by_email(email):
+        return Contact.query.filter(Contact.email.ilike(f'%{email}%')).all()
+
+    def search_by_telephone(telephone):
+        return Contact.query.filter(Contact.telephone.ilike(f'%{telephone}%')).all()
 
     def create(data):
         contact = Contact(

@@ -1,5 +1,5 @@
 import os
-from flask import Flask, send_from_directory
+from flask import Flask, send_from_directory, redirect, url_for
 from flask_cors import CORS
 from config import Config
 from config import db
@@ -28,11 +28,13 @@ def create_app():
     
     @app.route('/')
     def index():
-        return "Application is running"
+        return redirect(url_for('contacts.get_contacts'))
     
     return app
 
 if __name__ == '__main__':
     app = create_app()
-    
+
     app.run(debug=True)
+    
+        

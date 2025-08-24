@@ -1,0 +1,60 @@
+body {
+    background-color: rgba(255,255,255,0.8);
+    color: black;
+}
+.navbar {
+    background: rgba(20,20,20,0.85);
+    color: white;
+    border-bottom: 1px solid rgba(255,255,255,0.8);
+}
+.alert {
+    border-radius: 12px;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.95rem;
+}
+.main-container {
+    max-width: 960px;
+    margin: auto;
+}
+
+.hover-card {
+transition: all 0.3s ease;
+}
+.hover-card:hover {
+transform: translateY(-6px);
+box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+}
+.profile-pic img {
+transition: transform 0.3s ease;
+}
+.profile-pic img:hover {
+transform: scale(1.05);
+}
+.rounded-circle{
+    width:100px; 
+    height:100px; 
+    object-fit:cover; 
+    border: 2px solid #f1f1f1;
+}
+
+.search-bar .input-group {
+  border-radius: 50px;
+  overflow: hidden;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.search-bar input {
+  font-size: 0.95rem;
+  padding: 0.6rem 1rem;
+}
+
+.search-bar .input-group-text {
+  border-right: none;
+}
+
+.search-bar input:focus {
+  outline: none;
+  box-shadow: none;
+  background-color: #f8f9fa;
+}

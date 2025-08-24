@@ -19,6 +19,22 @@ def get_contacts():
     contacts = ContactDAO.get_all()
     return render_template('list.html', contacts=contacts)
 
+# search for contacts
+@contact_bp.route('/contacts/search', methods=['GET'])
+def search_contacts():
+    query = request.args.get('q')
+    
+    if not query:
+        return redirect(url_for('contacts.get_contacts'))
+
+    by_name = ContactDAO.search_by_name(query)
+    by_email = ContactDAO.search_by_email(query)
+    by_telephone = ContactDAO.search_by_telephone(query)
+
+    contacts = set(by_name + by_email + by_telephone)
+    contacts = [c for c in contacts if c]
+
+    return render_template('list.html', contacts=contacts)
 
 # get contact by id (detail)
 @contact_bp.route('/contacts/<int:contact_id>', methods=['GET'])
