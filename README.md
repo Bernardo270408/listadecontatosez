@@ -14,14 +14,6 @@ Serve como exemplo prático de CRUD (Create, Read, Update, Delete) em Python com
 
 ---
 
-## Tecnologias utilizadas
-- Python — lógica principal
-- HTML / CSS — interface web
-- Flask — framework web para Python
-- Bootstrap — estilização responsiva
-
----
-
 ## Estrutura do projeto
 ```
 
